@@ -13,16 +13,26 @@ import org.neo4j.ogm.annotation.Relationship;
 public class User {
 	
 	@GraphId Long id;
+	
+	
+	String id_spotify;
 	private String name;
 	@Index(unique=true)
 	private String email;
-	private String id_spotify;
 	private String uri;
 	
     @Relationship(type = "LISTENED_TO")
-	private Set<Truck> trucks = new HashSet<>();
+	private Set<Track> trucks = new HashSet<>();
 	
     
+	public String getId_spotify() {
+		return id_spotify;
+	}
+
+	public void setId_spotify(String id_spotify) {
+		this.id_spotify = id_spotify;
+	}
+
 	public String getUri() {
 		return uri;
 	}
@@ -51,21 +61,18 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getId_spotify() {
-		return id_spotify;
-	}
-	public void setId_spotify(String id_spotify) {
-		this.id_spotify = id_spotify;
-	}
 	
 
-	public Set<Truck> getTrucks() {
+	public Set<Track> getTrucks() {
 		return trucks;
 	}
 
-	public void setTrucks(Truck truck) {
+	public void setTrucks(Track truck) {
 		this.trucks.add(truck);
 	}
+
+
+	
 
 
 	@Override
@@ -73,6 +80,8 @@ public class User {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
+		result = prime * result
+				+ ((id_spotify == null) ? 0 : id_spotify.hashCode());
 		return result;
 	}
 
@@ -89,6 +98,11 @@ public class User {
 			if (other.email != null)
 				return false;
 		} else if (!email.equals(other.email))
+			return false;
+		if (id_spotify == null) {
+			if (other.id_spotify != null)
+				return false;
+		} else if (!id_spotify.equals(other.id_spotify))
 			return false;
 		return true;
 	}

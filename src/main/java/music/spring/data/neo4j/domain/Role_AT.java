@@ -19,7 +19,7 @@ public class Role_AT {
 	 @GraphId Long id;
 	 
 	 @StartNode
-	 private Truck truck;
+	 private Track truck;
 	 
 	 @EndNode
 	 private Artist artist;
@@ -30,11 +30,11 @@ public class Role_AT {
 	
 	}
 
-	public Truck getTruck() {
+	public Track getTruck() {
 		return truck;
 	}
 
-	public void setTruck(Truck truck) {
+	public void setTruck(Track truck) {
 		this.truck = truck;
 	}
 

@@ -2,6 +2,7 @@ package music.spring.data.neo4j.controller;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import music.spring.data.neo4j.controller.exception.NotFoundException;
 import music.spring.data.neo4j.services.Service;
-
+@CrossOrigin(origins = "http://localhost:8888")
 public abstract class Controller<T> {
 
 	 public abstract Service<T> getService();

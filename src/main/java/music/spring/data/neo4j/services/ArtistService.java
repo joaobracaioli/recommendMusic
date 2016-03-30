@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.neo4j.repository.GraphRepository;
 import org.springframework.stereotype.Service;
 
-@Service
+@Service("artistiService")
 public class ArtistService extends GenericService<Artist> implements ArtistInterfaceService {
 
 	@Autowired

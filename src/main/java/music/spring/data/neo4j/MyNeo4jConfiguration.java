@@ -12,14 +12,15 @@ import org.springframework.data.neo4j.server.RemoteServer;
 import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 // tag::config[]
 @EnableTransactionManagement
-@Import(RepositoryRestMvcConfiguration.class)
 @EnableScheduling
-@EnableAutoConfiguration
-@ComponentScan(basePackages = {"music.spring.data.neo4j.services"})
+@EnableWebMvc
 @Configuration
+@EnableAutoConfiguration
+@ComponentScan
 @EnableNeo4jRepositories(basePackages = "music.spring.data.neo4j.repositories")
 public class MyNeo4jConfiguration extends Neo4jConfiguration {
 

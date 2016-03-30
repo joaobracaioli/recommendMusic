@@ -50,4 +50,15 @@ public class User extends SimpleUser {
     final public String getProduct() {
         return mProduct;
     }
+
+	@Override
+	public String toString() {
+		return "User [mEmail=" + mEmail + ", getCountry()=" + getCountry()
+				+ ", getEmail()=" + getEmail() + ", getProduct()="
+				+ getProduct() + ", getDisplayName()=" + getDisplayName()
+				+ ", getHref()=" + getHref() + ", getId()=" + getId()
+				+ ", getUri()=" + getUri() + "]";
+	}
+    
+    
 }
